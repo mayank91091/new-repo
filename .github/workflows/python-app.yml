@@ -20,14 +20,11 @@ jobs:
 
     runs-on: ubuntu-latest
     
-steps:
- - name: workflow variable 
-      run:|
-           echo $workflow_Variable 
-  Jobs:
-
+# steps:
+    #- name: workflow variable 
+     # run: echo $workflow_Variable 
 env:
-    JOB_VARIABLE: "This is a job-level variable"
+    JOB_VARIABLE: "This is a job-level variable."
     steps:
     - name : use job variable 
         run: echo $job_variable 
