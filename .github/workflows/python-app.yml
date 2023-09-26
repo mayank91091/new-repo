@@ -13,20 +13,35 @@ permissions:
   contents: read
 
 env:
-WORKFLOW_VARIABLE: "This is a workflow-level variable"
+   WORKFLOW_VARIABLE: "This is a workflow-level variable."
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+steps:
+ - name: workflow variable 
+      run:|
+           echo $workflow_Variable 
+  Jobs:
+
 env:
-      JOB_VARIABLE: "This is a job-level variable"
+    JOB_VARIABLE: "This is a job-level variable"
+    steps:
+    - name : use job variable 
+        run: echo $job_variable 
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
+     steps :
+     - name: set step variable 
      run: |
           MY_STEP_VARIABLE="This is a step-level variable"
           echo $MY_STEP_VARIABLE
+      -name : use step variable 
+       run :|
+            echo $mystepvariable
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
