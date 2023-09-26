@@ -12,14 +12,21 @@ on:
 permissions:
   contents: read
 
+env:
+WORKFLOW_VARIABLE: "This is a workflow-level variable"
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+env:
+      JOB_VARIABLE: "This is a job-level variable"
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
+     run: |
+          MY_STEP_VARIABLE="This is a step-level variable"
+          echo $MY_STEP_VARIABLE
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
