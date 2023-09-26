@@ -24,9 +24,9 @@ jobs:
     #- name: workflow variable 
      # run: echo $workflow_Variable 
 env:
-    JOB_VARIABLE: "This is a job-level variable."
-    steps:
-    - name : use job variable 
+  JOB_VARIABLE: "This is a job-level variable."
+  steps:
+  - name : use job variable 
         run: echo $job_variable 
     steps:
     - uses: actions/checkout@v3
