@@ -10,31 +10,7 @@ on:
     branches: [ "main" ]
 
 permissions:
-  actions: 
-    - '*'
-  contents: 
-    - '*'
-  deployments: 
-    - '*'
-  environments: 
-    - '*'
-  issues: 
-    - '*'
-  packages: 
-    - '*'
-  pull-requests: 
-    - '*'
-  repository_hooks: 
-    - '*'
-  secrets: 
-    - '*'
-  self: 
-    - '*'
-  workflows: 
-    - '*'
-  vulnerability_alerts: 
-    - '*'
-
+  contents: read
 
 jobs:
   build:
